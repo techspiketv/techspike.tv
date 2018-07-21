@@ -34,7 +34,7 @@ class TagRoute extends React.Component {
           <h1>{'techspike.tv Tags'}</h1>
 
           <Link className="all-tags-link" to="/tags/">
-            <Button variant={'primary'}>Browse all tags</Button>
+          Browse all tags
           </Link>
         </Hero>
 
