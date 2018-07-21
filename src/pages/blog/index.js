@@ -13,8 +13,10 @@ const BlogIndexPage = ({ data }) => {
   const PageContent = Content;
 
   console.log(data);
+
   const localPosts = data.allMarkdownRemark.edges;
   const mediumPosts = data.allMediumPost.edges;
+  const twitchPosts = data.allTwitchvideo.edges.splice(0, 3);
 
   return (
     <div>
@@ -23,7 +25,36 @@ const BlogIndexPage = ({ data }) => {
           techspike.tv <br /> Blog
         </h1>
       </Hero>
-      medium posts
+      twitch posts
+      <Grid container spacing={40}>
+        {twitchPosts
+          // .filter(post => post.node.frontmatter.templateKey === 'blog-post')
+          .map(({ node: post }) => (
+            <Grid item xs={6} md={12} key={post.originalID}>
+              <Grid className="techspike-twitch-video" container spacing={8}>
+                <Grid item xs={12} md={12}>
+                  <iframe
+                    src={`https://player.twitch.tv/?autoplay=false&video=v${
+                      post.originalID
+                    }`}
+                    frameBorder="0"
+                    allowFullScreen="true"
+                    scrolling="no"
+                    height="378"
+                    width="620"
+                  />
+                  <a
+                    href={`https://www.twitch.tv/videos/${
+                      post.originalID
+                    }?tt_content=text_link&tt_medium=vod_embed`}
+                  >
+                    {post.title}
+                  </a>
+                </Grid>
+              </Grid>
+            </Grid>
+          ))}
+      </Grid>
       <Grid className="techspike-blog-stories" container spacing={40}>
         {mediumPosts
           // .filter(post => post.node.frontmatter.templateKey === 'blog-post')
@@ -76,13 +107,13 @@ const BlogIndexPage = ({ data }) => {
   );
 };
 
-BlogIndexPage.propTypes = {
-  data: PropTypes.shape({
-    allMarkdownRemark: PropTypes.shape({
-      edges: PropTypes.array
-    })
-  })
-};
+// BlogIndexPage.propTypes = {
+//   data: PropTypes.shape({
+//     allMarkdownRemark: PropTypes.shape({
+//       edges: PropTypes.array
+//     })
+//   })
+// };
 
 export default BlogIndexPage;
 
@@ -106,6 +137,17 @@ export const pageQuery = graphql`
         }
       }
     }
+  
+  allTwitchvideo {
+    edges {
+      node {
+        originalID
+        title
+        url
+        type
+      }
+    }
+  }
     allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
       edges {
         node {

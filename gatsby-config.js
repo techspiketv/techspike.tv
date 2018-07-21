@@ -45,18 +45,11 @@ module.exports = {
       }
     },
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: `gatsby-source-twitch`,
       options: {
-        trackingId: 'UA-XXXXX-2',
-        // Puts tracking script in the head instead of the body
-        head: false,
-        // Setting this parameter is optional
-        anonymize: true,
-        // Setting this parameter is also optional
-        respectDNT: true,
-        // Avoids sending pageview hits from custom paths
-        exclude: ['/preview/**', '/do-not-track/me/too/']
-      }
+        userID: '41082462',
+        clientID: 'ywor20cziu7n3qegcbgc9117gze0ge'
+      },
     },
     {
       resolve: 'gatsby-transformer-remark',

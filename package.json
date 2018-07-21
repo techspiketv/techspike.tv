@@ -21,7 +21,6 @@
     "font-awesome": "^4.7.0",
     "gatsby": "^1.9.261",
     "gatsby-plugin-favicon": "^2.1.1",
-    "gatsby-plugin-google-analytics": "^1.0.31",
     "gatsby-plugin-netlify": "^1.0.19",
     "gatsby-plugin-netlify-cms": "2.0.1",
     "gatsby-plugin-react-helmet": "^2.0.11",
@@ -29,6 +28,7 @@
     "gatsby-plugin-sharp": "^1.6.44",
     "gatsby-source-filesystem": "^1.5.36",
     "gatsby-source-medium": "^1.0.14",
+    "gatsby-source-twitch": "^1.0.0",
     "gatsby-transformer-remark": "^1.7.41",
     "gatsby-transformer-sharp": "^1.6.24",
     "material-ui": "^1.0.0-beta.47",
@@ -38,6 +38,7 @@
     "react-helmet": "^5.2.0",
     "react-particles-js": "^2.1.3",
     "react-sticky": "^6.0.2",
+    "react-twitch-embed-video": "^1.0.1",
     "react-vertical-timeline-component": "^2.0.7"
   },
   "devDependencies": {

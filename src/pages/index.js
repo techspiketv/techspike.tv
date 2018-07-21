@@ -9,11 +9,15 @@ import Particles from 'react-particles-js';
 
 import particles from '../assets/particles.json';
 
+import ReactTwitchEmbedVideo from "react-twitch-embed-video"
+
 export default class IndexPage extends React.Component {
   render() {
     const { data } = this.props;
     return (
       <section>
+
+        <ReactTwitchEmbedVideo channel="chactories" />
         <Hero background={bg}>
           <h1>techspike.tv</h1>
           <p
