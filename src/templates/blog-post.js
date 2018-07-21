@@ -52,8 +52,6 @@ export const BlogPostTemplate = ({
           </Grid>
         </Grid>
       </div>
-
-      <Footer />
     </div>
   );
 };
