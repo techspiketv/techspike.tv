@@ -1,13 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
-import moment from 'moment';
 
-import Grid from '@material-ui/core/Grid';
+
 import Content, { HTMLContent } from '../../components/Content';
-import Hero from '../../components/hero/Hero';
-
-import background from '../../assets/bg.jpeg';
 
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';

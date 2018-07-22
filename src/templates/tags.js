@@ -2,10 +2,10 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import Link from 'gatsby-link';
 
-import Hero from '../components/hero/Hero';
+import Navbar from '../components/navbar/Navbar'
+import Button from '@material-ui/core/Button';
 
-
-import background from '../assets/bg.jpeg';
+import Typography from '@material-ui/core/Typography';
 
 class TagRoute extends React.Component {
   render() {
@@ -17,7 +17,13 @@ class TagRoute extends React.Component {
         <small>{post.node.frontmatter.date}</small>
         <p className="excerpt">{post.node.excerpt}</p>
         <br />
-        <Link to={post.node.fields.slug}>Keep reading...</Link>
+        <Link to={post.node.fields.slug}>
+          <Button size="small" variant="contained" color='secondary'>
+            Keep reading...
+          </Button>
+        </Link>
+
+
       </li>
     ));
     const tag = this.props.pathContext.tag;
@@ -25,27 +31,27 @@ class TagRoute extends React.Component {
     const totalCount = this.props.data.allMarkdownRemark.totalCount;
     const tagHeader = `${totalCount} post${
       totalCount === 1 ? '' : 's'
-    } tagged with “${tag}”`;
+      } tagged with “${tag}”`;
 
     return (
-      <div className="techspike-tags">
+      <Navbar >
         <Helmet title={`${tag} | ${title}`} />
-        <Hero background={background} tripp={true}>
-          <h1>{'techspike.tv Tags'}</h1>
 
-          <Link className="all-tags-link" to="/tags/">
-          Browse all tags
-          </Link>
-        </Hero>
 
-        <div className="techspike-tag-content">
-          <h2>{tagHeader}</h2>
-          <div>
-            <ul>{postLinks}</ul>
-          </div>
+        <div style={{ padding: '16px' }}>
+
+          <Typography variant="display2" gutterBottom>{tagHeader}</Typography>
+
+          <Typography className="techspike-tag-content" >
+
+            <div>
+              <ul>{postLinks}</ul>
+            </div>
+          </Typography>
+
         </div>
 
-      </div>
+      </Navbar>
     );
   }
 }

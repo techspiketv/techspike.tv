@@ -6,8 +6,10 @@ import Link from 'gatsby-link';
 import Content, { HTMLContent } from '../components/Content';
 import Grid from '@material-ui/core/Grid';
 
-import Hero from '../components/hero/Hero';
-import background from '../assets/bg.jpeg';
+import Button from '@material-ui/core/Button';
+import Navbar from '../components/navbar/Navbar'
+
+import Typography from '@material-ui/core/Typography';
 
 export const BlogPostTemplate = ({
   content,
@@ -20,39 +22,40 @@ export const BlogPostTemplate = ({
   const PostContent = contentComponent || Content;
 
   return (
-    <div className="techspike-blog-post">
-      {helmet || ''}
+    <Navbar>
+      <div className="techspike-blog-post">
+        {helmet || ''}
+        <div className="techspike-blog-content" style={{ padding: '16px' }}>
 
-      <Hero background={background} tripp={false}>
-        <h1>{title}</h1>
-      </Hero>
-
-      {description}
-
-      <div className="techspike-blog-content">
-        <Grid container spacing={8}>
-          <Grid item xs={12} md={8}>
-            <PostContent content={content} />
-          </Grid>
-          <Grid item xs={12} md={4}>
-            <div className="techspike-tags">
-              {tags && tags.length ? (
-                <div>
-                  <h4>Tags</h4>
-                  <ul className="techspike-taglist">
+          <Grid container spacing={8}>
+            <Grid item xs={12} md={8}>
+              <Typography variant="display2" >
+                {description}
+              </Typography>
+              <br />
+              <PostContent content={content} />
+            </Grid>
+            <Grid item xs={12} md={4}>
+              <div className="techspike-tags">
+                {tags && tags.length ? (
+                  <div>
+                    <Typography variant="display2">Tags</Typography>
+                    <br />
                     {tags.map(tag => (
-                      <li key={tag + `tag`}>
-                        <Link to={`/tags/${kebabCase(tag)}/`}>#{tag}</Link>
-                      </li>
+                      <Link to={`/tags/${kebabCase(tag)}/`}>
+                        <Button key={tag + `tag`} size="small" variant="contained" color='secondary'>
+                          #{tag}
+                        </Button>
+                      </Link>
                     ))}
-                  </ul>
-                </div>
-              ) : null}
-            </div>
+                  </div>
+                ) : null}
+              </div>
+            </Grid>
           </Grid>
-        </Grid>
+        </div>
       </div>
-    </div>
+    </Navbar>
   );
 };
 
