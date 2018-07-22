@@ -18,6 +18,7 @@ import Paper from '@material-ui/core/Paper';
 const styles = {
   root: {
     flexGrow: 1,
+    height: '100%'
   },
   flex: {
     flexGrow: 1,
@@ -93,7 +94,7 @@ class AppBarWithDrawer extends React.Component {
             {sideList}
           </div>
         </SwipeableDrawer>
-        <Paper style={{ paddingTop: '64px' }}>
+        <Paper style={{ paddingTop: '64px', height: '100%' }}>
           {children}
         </Paper>
       </div>
