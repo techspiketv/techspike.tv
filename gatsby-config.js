@@ -47,7 +47,7 @@ module.exports = {
     {
       resolve: `gatsby-source-twitch`,
       options: {
-        userID: '41082462',
+        userID: '156793482',
         clientID: 'ywor20cziu7n3qegcbgc9117gze0ge'
       },
     },
