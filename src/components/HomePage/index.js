@@ -130,7 +130,7 @@ class ResponsiveDrawer extends React.Component {
 
           <div className={classes.toolbar} />
 
-          <Grid container style={{ marginTop: '96px' }}>
+          <Grid container >
             <Grid item xs={12} md={8} style={{ padding: '16px' }}>
               <iframe
                 src="https://player.twitch.tv/?channel=techspiketv"
@@ -151,7 +151,7 @@ class ResponsiveDrawer extends React.Component {
 
           {
             blogPosts.map(({ node: post }) => {
-              return <div key={post.id}>
+              return <div key={post.id} style={{ paddingBottom: '32px' }}>
                 <Link to={post.fields.slug}>
                   <Typography>{post.frontmatter.title}</Typography>
                 </Link>
