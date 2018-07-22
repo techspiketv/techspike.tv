@@ -4,7 +4,7 @@ import { kebabCase } from 'lodash';
 import Helmet from 'react-helmet';
 import Link from 'gatsby-link';
 import Content, { HTMLContent } from '../components/Content';
-import Grid from 'material-ui/Grid';
+import Grid from '@material-ui/core/Grid';
 
 import Hero from '../components/hero/Hero';
 import background from '../assets/bg.jpeg';

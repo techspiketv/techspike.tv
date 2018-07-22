@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
 import moment from 'moment';
 
-import Grid from 'material-ui/Grid';
+import Grid from '@material-ui/core/Grid';
 import Content, { HTMLContent } from '../../components/Content';
 import Hero from '../../components/hero/Hero';
 
@@ -12,7 +12,7 @@ import background from '../../assets/bg.jpeg';
 const BlogIndexPage = ({ data }) => {
   const PageContent = Content;
 
-  console.log(data);
+  // console.log(data);
 
   const localPosts = data.allMarkdownRemark.edges;
   const mediumPosts = data.allMediumPost.edges;
@@ -36,7 +36,7 @@ const BlogIndexPage = ({ data }) => {
                   <iframe
                     src={`https://player.twitch.tv/?autoplay=false&video=v${
                       post.originalID
-                    }`}
+                      }`}
                     frameBorder="0"
                     allowFullScreen="true"
                     scrolling="no"
@@ -46,7 +46,7 @@ const BlogIndexPage = ({ data }) => {
                   <a
                     href={`https://www.twitch.tv/videos/${
                       post.originalID
-                    }?tt_content=text_link&tt_medium=vod_embed`}
+                      }?tt_content=text_link&tt_medium=vod_embed`}
                   >
                     {post.title}
                   </a>
