@@ -1,85 +1,109 @@
-import React from 'react';
-import Link from 'gatsby-link';
+import React, { Children } from 'react';
+import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/core/styles';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
 
-import logo from '../../assets/logo.svg';
 
-import AppBar from '../appbar'
+import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
+import List from '@material-ui/core/List';
+import Divider from '@material-ui/core/Divider';
+import { mailFolderListItems, otherMailFolderListItems } from './tileData';
+import Paper from '@material-ui/core/Paper';
 
-export default class SmartNavbar extends React.Component {
+const styles = {
+  root: {
+    flexGrow: 1,
+  },
+  flex: {
+    flexGrow: 1,
+  },
+  menuButton: {
+    marginLeft: -12,
+    marginRight: 20,
+  },
+  list: {
+    width: 250,
+  },
+  fullList: {
+    width: 'auto',
+  },
+
+};
+
+class AppBarWithDrawer extends React.Component {
+
   state = {
-    open: false
+    top: false,
+    left: false,
+    bottom: false,
+    right: false,
   };
-  render() {
-    const { style, distanceFromTop } = this.props;
-    let isSticky =
-      distanceFromTop === undefined ? false : distanceFromTop !== 0;
 
-    if (this.state.open) {
-      isSticky = true;
-    }
+
+  toggleDrawer = (side, open) => () => {
+    console.log
+    this.setState({
+      [side]: open,
+    });
+  };
+
+  render() {
+    const { classes, children } = this.props;
+
+    const sideList = (
+      <div className={classes.list}>
+        <List>{mailFolderListItems}</List>
+        <Divider />
+        <List>{otherMailFolderListItems}</List>
+      </div>
+    );
 
     return (
-      <div
-        style={{
-          ...style,
-          zIndex: 1000
-        }}
-      >
+      <div className={classes.root}>
+        <AppBar position="fixed">
+          <Toolbar>
+            <IconButton className={classes.menuButton} color="inherit" aria-label="Menu" onClick={() => {
+              this.toggleDrawer('left', true)()
+            }}>
+              <MenuIcon />
+            </IconButton>
+            <Typography variant="title" color="inherit" className={classes.flex}>
+              techspike.tv
+            </Typography>
+            <Button color="inherit" href='https://github.com/OR13/techspike.tv'>Source</Button>
+          </Toolbar>
+        </AppBar>
 
-      <AppBar/>
-
-{/*       
-        <nav
-          className={`navbar ${isSticky ? 'sticky' : 'not-sticky'}`}
-          style={style}
-          role="navigation"
-          aria-label="main navigation"
+        <SwipeableDrawer
+          open={this.state.left}
+          onClose={this.toggleDrawer('left', false)}
+          onOpen={this.toggleDrawer('left', true)}
         >
-          <div className="navbar-brand">
-            <Link to="/">
-              <img
-                src={logo}
-                alt="techspike.tv"
-                style={{ width: '150px', paddingTop: '6px' }}
-              />
-            </Link>
-
-            <a
-              role="button"
-              className="navbar-burger"
-              aria-label="menu"
-              aria-expanded="false"
-              onClick={() => {
-                this.setState({
-                  open: !this.state.open
-                });
-              }}
-            >
-              <span aria-hidden="true" />
-              <span aria-hidden="true" />
-              <span aria-hidden="true" />
-            </a>
+          <div
+            tabIndex={0}
+            role="button"
+            onClick={this.toggleDrawer('left', false)}
+            onKeyDown={this.toggleDrawer('left', false)}
+          >
+            {sideList}
           </div>
-          <div className={`navbar-menu ${this.state.open ? 'is-active' : ''}`}>
-            <div className="navbar-end">
-              <Link className="navbar-item" to="/roadmap">
-                Product
-              </Link>
-              <Link className="navbar-item" to="/team">
-                Team
-              </Link>
-              <a
-                className="navbar-item"
-                target="_blank"
-                rel="noopener noreferrer"
-                href={'/whitepaper.pdf'}
-              >
-                Whitepaper
-              </a>
-            </div>
-          </div>
-        </nav> */}
+        </SwipeableDrawer>
+        <Paper style={{ paddingTop: '64px' }}>
+          {children}
+        </Paper>
       </div>
     );
   }
+
 }
+
+AppBarWithDrawer.propTypes = {
+  classes: PropTypes.object.isRequired,
+};
+
+export default withStyles(styles)(AppBarWithDrawer);

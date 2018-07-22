@@ -9,10 +9,10 @@ import Hero from '../../components/hero/Hero';
 
 import background from '../../assets/bg.jpeg';
 
+import Navbar from '../../components/navbar/Navbar'
+
 const BlogIndexPage = ({ data }) => {
   const PageContent = Content;
-
-  // console.log(data);
 
   const localPosts = data.allMarkdownRemark.edges;
   const mediumPosts = data.allMediumPost.edges;
@@ -20,7 +20,160 @@ const BlogIndexPage = ({ data }) => {
 
   return (
     <div>
-      <Hero tripp={false} background={background}>
+
+      <Navbar >
+        <div>asdfasdfasdf2</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div> <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div> <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf</div>
+        <div>asdfasdfasdf5555</div>
+      </Navbar>
+
+
+      {/* <Hero tripp={false} background={background}>
         <h1>
           techspike.tv <br /> Blog
         </h1>
@@ -28,7 +181,6 @@ const BlogIndexPage = ({ data }) => {
       twitch posts
       <Grid container spacing={40}>
         {twitchPosts
-          // .filter(post => post.node.frontmatter.templateKey === 'blog-post')
           .map(({ node: post }) => (
             <Grid item xs={6} md={12} key={post.originalID}>
               <Grid className="techspike-twitch-video" container spacing={8}>
@@ -57,14 +209,12 @@ const BlogIndexPage = ({ data }) => {
       </Grid>
       <Grid className="techspike-blog-stories" container spacing={40}>
         {mediumPosts
-          // .filter(post => post.node.frontmatter.templateKey === 'blog-post')
           .map(({ node: post }) => (
             <Grid item xs={6} md={12} key={post.id}>
               <Grid className="techspike-medium-story" container spacing={8}>
                 <Grid item xs={12} md={12}>
                   <h3>{post.title}</h3>
                   <small>{moment(post.createdAt).format('LL')}</small>
-                  {/* <pre>{JSON.stringify(post)}</pre> */}
                   <p>{post.virtuals.subtitle}</p>
                   <br />
                   <br />
@@ -102,7 +252,7 @@ const BlogIndexPage = ({ data }) => {
               </Grid>
             </Grid>
           ))}
-      </Grid>
+      </Grid> */}
     </div>
   );
 };
