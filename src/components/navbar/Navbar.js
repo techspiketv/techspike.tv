@@ -76,7 +76,7 @@ class AppBarWithDrawer extends React.Component {
             <Typography variant="title" color="inherit" className={classes.flex}>
               techspike.tv
             </Typography>
-            <Button color="inherit" href='https://github.com/OR13/techspike.tv'>Source</Button>
+            <Button color="inherit" href='https://github.com/techspiketv/techspike.tv'>Source</Button>
           </Toolbar>
         </AppBar>
 
