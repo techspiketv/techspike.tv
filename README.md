@@ -2,15 +2,6 @@
 
 #### [Twitch Stream](https://www.twitch.tv/techspiketv)
 
-## Getting Started
-
-```
-npm i
-npm run develop
-npm run build
-npm run serve
-```
-
 ## About techspike.tv
 
 A spike is a product-testing method originating from Extreme Programming that uses the simplest possible program to explore potential solutions.
@@ -21,13 +12,12 @@ If you want to request a spike, HMU in chat.
 
 I plan to stream:
 
-* React / Web Development
-* Ethereum Development
-* Machine Learning Experiments
-* Chat Bot Dev
+- React / Web Development
+- Ethereum Development
+- Machine Learning Experiments
+- Chat Bot Dev
 
 ## Using Gatsby with Twitch
-
 
 Go get your own twitch clientID:
 
@@ -41,10 +31,9 @@ You will need to set the Client-ID header...
 
 https://dev.twitch.tv/docs/v5#translating-from-user-names-to-user-ids
 
-
 ### Plugins
 
 - [NetlifyCMS](https://www.gatsbyjs.org/packages/gatsby-plugin-netlify-cms/)
-- [JSDoc](https://www.gatsbyjs.org/packages/gatsby-transformer-documentationjs/) 
+- [JSDoc](https://www.gatsbyjs.org/packages/gatsby-transformer-documentationjs/)
 - [Twitch](https://github.com/Jedidiah/gatsby-source-twitch)
 - [Medium](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-source-medium)
