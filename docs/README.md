@@ -1,4 +1,8 @@
+# techspike.tv
+
 #### [techspike.tv on GitHub](https://github.com/techspiketv/techspike.tv)
+
+#### [techspike.tv on Twitch](https://www.twitch.tv/techspiketv)
 
 A spike is a product-testing method originating from Extreme Programming that uses the simplest possible program to explore potential solutions.
 
